@@ -1,0 +1,8 @@
+<div>
+  <h4><%= link_to list.name, list_path(list) %></h4>
+  <p><%= list.description %><span> created at <%= list.created_at %></span></p>
+  <div>
+    <%= link_to 'Edit', edit_list_path(list) %> |
+    <%= link_to 'Delete', list_path(list), method: :delete, confirm: 'Are you sure?' %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<%= render 'shared/content_title', title: @list.name %>
+
+<ul>
+  <% @list.items.each do |item| %>
+    <li><%= render 'items/item', item: item %></li>
+  <% end %>
+</ul>
+
+<div>
+  <%= form_for [@list, @item ] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br/>
+    <%= f.label :qty %>
+    <%= f.number_field :qty %>
+    <br/>
+    <%= f.submit 'Add Item' %>
+  <% end %>
+</div>
