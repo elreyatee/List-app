@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
-
+gem 'sluggable_ellery_mar', '~> 0.0.0'
 # Use unicorn as the app server
 # gem 'unicorn'
 

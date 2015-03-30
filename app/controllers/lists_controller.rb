@@ -4,7 +4,7 @@ class ListsController < ApplicationController
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @lists = List.all.select {|list| list.creator == current_user}
+    @lists = List.where("user_id = ?", current_user).reverse_order
   end
 
   def show
@@ -23,6 +23,7 @@ class ListsController < ApplicationController
       flash[:notice] = 'Your list has been created'
       redirect_to root_path
     else
+      flash[:notice] = 'There was a problem, please try again'
       render 'new'
     end
   end
@@ -47,7 +48,7 @@ class ListsController < ApplicationController
   private
 
   def set_list
-    @list = List.find_by(params[:id])
+    @list = List.find_by(slug: params[:id])
   end
 
   def list_params
