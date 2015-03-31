@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.admin = false
 
     if @user.save
       flash[:notice] = "Hello #{@user.username}! Your profile has been created"

@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
 gem 'sluggable_ellery_mar', '~> 0.0.0'
+gem 'geocoder'
 # Use unicorn as the app server
 # gem 'unicorn'
 

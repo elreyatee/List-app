@@ -31,7 +31,6 @@ class ListsController < ApplicationController
   def edit; end
 
   def update
-
     if @list.update(list_params)
       flash[:notice] = 'Your list has been updated'
       redirect_to root_path
@@ -52,7 +51,8 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name, :description)
+
+    params.require(:list).permit(:name, :description, items_attributes: [:id, :_destroy])
   end
 
 end

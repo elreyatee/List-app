@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def create
     @list = List.find_by(slug: params[:list_id])
-    @item = @list.items.build(params.require(:item).permit(:name, :description, :qty))
+    @item = @list.items.build(items_params)
     @item.creator = current_user
 
     if @item.save
@@ -16,6 +16,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    
+  end
 
+  private
+
+  def items_params
+    params.require(:item).permit(:name, :description, :qty, :_destroy)
   end
 end

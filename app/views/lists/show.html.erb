@@ -1,14 +1,23 @@
-
 <%= render 'shared/content_title', title: @list.name %>
 
-<ul>
-  <% @list.items.each do |item| %>
-    <li><%= render 'items/item', item: item %></li>
+<% unless @list.items.empty? %>
+  <%= form_for @list, method: :patch do |f| %>
+    <ul>
+      <%= f.fields_for :items do |item_form| %>
+        <li>
+          <%= item_form.check_box :_destroy %>
+          <%= item_form.object.name %>
+          <%= item_form.object.description %>
+          qty: <%= item_form.object.qty %>
+        </li>
+      <% end %>
+    </ul>
+    <%= f.submit 'Delete Items' %>
   <% end %>
-</ul>
+<% end %>
 
 <div>
-  <%= form_for [@list, @item ] do |f| %>
+  <%= form_for [@list, @item] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br/>
