@@ -1,5 +1,7 @@
 <div>
-  <%= link_to "Home", root_path %> |
+  <%= link_to root_path do %>
+    <i class="fa fa-home fa-2x"></i>
+  <% end %> 
   <% if logged_in? %>
     <%= link_to "Logout", logout_path %> |
     <%= link_to "Create List", new_list_path %>
