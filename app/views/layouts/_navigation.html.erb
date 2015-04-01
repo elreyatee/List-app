@@ -1,12 +1,32 @@
-<div>
-  <%= link_to root_path do %>
-    <i class="fa fa-home fa-2x"></i>
-  <% end %> 
-  <% if logged_in? %>
-    <%= link_to "Logout", logout_path %> |
-    <%= link_to "Create List", new_list_path %>
-  <% else %>
-    <%= link_to "Login", login_path %> |
-    <%= link_to "Register", register_path %> |
-  <% end %>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Shoppinglist</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <%= link_to root_path do %>
+          <i class="fa fa-home fa-2x"></i>
+        <% end %> 
+      </li>
+      <% if logged_in? %>
+        <li>
+          <%= link_to "Logout", logout_path %>
+        </li>
+        <li>
+          <%= link_to "Create List", new_list_path %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Login", login_path %>
+        </li>
+        <li>
+          <%= link_to "Register", register_path %> 
+        </li>
+      <% end %>
+    </ul>
+    <% if logged_in? %>
+      <p class="navbar-text navbar-right">Hello, <%= "#{current_user.username}!"%> </p>
+    <% end %>
+  </div>
+</nav>

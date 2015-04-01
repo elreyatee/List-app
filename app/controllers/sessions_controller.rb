@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "Welcome back, #{user.username}"
       redirect_to root_path
     else
-      flash[:notice] = "There's something wrong with your username or password"
+      flash[:error] = "There's something wrong with your username or password"
       render 'new'
     end
   end

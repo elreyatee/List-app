@@ -1,0 +1,19 @@
+<% unless list.items.empty? %>
+  <%= form_for list, method: :patch do |f| %>
+    <table class="table table-striped">
+      <th>Brand</th>
+      <th>Description</th>
+      <th>QTY</th>
+      <th>Delete?</th>
+      <%= f.fields_for :items do |item_form| %>
+        <tr>
+          <td><%= item_form.object.name %></td>
+          <td><%= item_form.object.description %></td>
+          <td><%= item_form.object.qty %></td>
+          <td><%= item_form.check_box :_destroy %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= f.submit 'Delete Items', class: 'btn btn-primary' %>
+  <% end %>
+<% end %>

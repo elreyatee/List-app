@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Hello #{@user.username}! Your profile has been created"
       redirect_to root_path
     else
+      flash[:error] = "There was a problem, please try again."
       render 'new'
     end
   end

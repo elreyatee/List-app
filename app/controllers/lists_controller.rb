@@ -23,7 +23,7 @@ class ListsController < ApplicationController
       flash[:notice] = 'Your list has been created'
       redirect_to root_path
     else
-      flash[:notice] = 'There was a problem, please try again'
+      flash[:error] = 'There was a problem, please try again'
       render 'new'
     end
   end

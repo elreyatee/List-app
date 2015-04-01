@@ -6,18 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
+<header>
+  <%= render 'layouts/navigation' %>
+<header>
 <body>
-  <header>
-    <div>
-      <%= render 'layouts/navigation' %>
-    </div>
-  <header>
   <div>
     <%= render 'layouts/messages' %>
   </div>
-
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>

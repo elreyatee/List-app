@@ -1,5 +1,18 @@
 <%= render 'shared/content_title', title: 'Lists' %>
 
-<% @lists.each do |list| %>
-  <%= render 'list', list: list %>
-<% end %>
+<ul class='list-group'>
+  <% @lists.each do |list| %>
+    <li class='list-group-item'>
+      <% if list.items.count == 0 %>
+        <span class="badge" style="background-color: red">
+          <%= list.items.count %>
+        </span>
+      <% else %>
+        <span class="badge" style="background-color: green">
+          <%= list.items.count %>
+        </span>
+      <% end %>
+      <%= render 'list', list: list %>
+    </li>
+  <% end %>
+</ul>
