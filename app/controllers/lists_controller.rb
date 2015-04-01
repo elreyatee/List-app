@@ -33,7 +33,7 @@ class ListsController < ApplicationController
   def update
     if @list.update(list_params)
       flash[:notice] = 'Your list has been updated'
-      redirect_to root_path
+      redirect_to :back
     else
       render 'edit'
     end
