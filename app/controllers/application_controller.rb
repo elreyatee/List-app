@@ -3,10 +3,10 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in? #makes these methods avail to all controllers
+  helper_method :current_user, :logged_in?, :require_user #makes these methods avail to all controllers
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    @current_user ||= User.find_by(auth_token: cookies[:auth_token]) if cookies[:auth_token]
   end
 
   def logged_in?
@@ -19,4 +19,9 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  # def parse_geocode(str)
+  #   newstr = str.gsub(/[^0-9.-]/, ' ').split
+  #   newstr.collect {|l| l.to_f }
+  # end
 end

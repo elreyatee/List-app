@@ -2,7 +2,7 @@
 
 <ul class='list-group'>
   <% @lists.each do |list| %>
-    <li class='list-group-item'>
+    <li class='list-group-item' id='list'>
       <% if list.items.count == 0 %>
         <span class="badge" style="background-color: red">
           <%= list.items.count %>
@@ -14,5 +14,6 @@
       <% end %>
       <%= render 'list', list: list %>
     </li>
+    <br/>
   <% end %>
 </ul>

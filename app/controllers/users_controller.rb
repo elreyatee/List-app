@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :search]
 
   def new
     @user = User.new
@@ -31,6 +31,10 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  # def search
+  #   current_user.request_venue(cookies[:lat_long], params[:venue])
+  # end
 
   private
 

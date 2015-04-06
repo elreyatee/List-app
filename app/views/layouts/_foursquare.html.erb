@@ -1,0 +1,18 @@
+<div class='container-fluid' id='foursquare'>
+  <div class='row'>
+    <button class='btn btn-primary' id='flink'>
+      <i class="fa fa-compass fa-lg"></i> Find Me
+    </button>
+
+    <%= form_tag search_path, class: 'form-inline' do %>
+      <div class='form-group'>
+        <div class='col-sm-4'>
+          <%= text_field_tag :venue, nil, placeholder: 'Search', class: 'form-control' %>
+        </div>
+      </div>
+      <div class='form-group'>
+        <%= submit_tag 'Search', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
