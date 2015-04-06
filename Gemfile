@@ -14,7 +14,7 @@ gem 'bcrypt'
 gem 'sluggable_ellery_mar', '~> 0.0.0'
 # gem 'foursquare2'
          
-group: :doc do
+group :doc do
   gem 'sdoc', '~> 0.4.0', require: false
 end
 
