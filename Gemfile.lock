@@ -68,6 +68,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -81,6 +83,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.8)
       sprockets-rails (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.4)
+    rails_stdout_logging (0.0.3)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -100,7 +107,6 @@ GEM
       rdoc (~> 4.0)
     slop (3.6.0)
     sluggable_ellery_mar (0.0.0)
-    spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -133,11 +139,12 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pry
+  quiet_assets
   rails (= 4.1.8)
+  rails_12factor
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   sluggable_ellery_mar (~> 0.0.0)
-  spring
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
